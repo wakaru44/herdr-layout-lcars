@@ -1,10 +1,6 @@
 # PUBLISH BLOCKERS (the foreman removes this file before publishing)
 
-1. **RESOLVED for bar, board, pane:** they derive from kanhrd, the repo owner's own project (THIRD-PARTY.md now says so). **STILL OPEN: `lcars-files`** is a restyled copy of Herdr's shipped `files` mod (0.1.16); the Herdr desktop app's licence is not confirmed (the herdrdev/herdr repo is the classic TUI, Apache-2.0, not necessarily the app). Either ask the Herdr author, or replace `lcars-files` with Herdr's own `files` mod (layout `side-body` child) / rewrite it from our RECIPE.
-   `lcars-bar`, `lcars-board`, `lcars-pane` started as clones of `kanhrd-bar`, `kanhrd-board`, `kanhrd-pane` (0.1.12) and keep their structure and
-   contracts (stack `view`, column `side`, `side-body`). `lcars-files` started as a copy of Herdr's shipped `files` mod (0.1.16); confirm that
-   Herdr's licence allows redistributing a derived copy. Until the kanhrd author and licence are known, either get permission / a licence, or
-   rewrite those three mods from the RECIPE. `THIRD-PARTY.md` has no kanhrd entry on purpose; add one when this is settled.
+1. **RESOLVED:** bar, board and pane derive from the owner's own kanhrd project (THIRD-PARTY.md says so). `lcars-files` is a restyled copy of Herdr's shipped `files` mod: owner's decision (2026-11-23): Herdr promotes sharing layouts and mods built from its shipped ones, so this is fine; keep the note in THIRD-PARTY.md.
 2. **preview.png is missing.** README and RECIPE link to it; herdr.dev/layouts needs it. Do NOT screenshot the real window (project names, terminal text).
    Produce a sanitized one: in a throwaway Herdr home (`HERDR_APP_HOME=$(mktemp -d)` with this repo copied in) or a clean window, create 3-4 spaces with
    generic names (alpha, beta, ...), a few agents or shells showing neutral text, switch to the ship view, and capture the window (about 1600x1000).
@@ -18,5 +14,5 @@
    these as a style reference only; reconsider if a lawyer/trademark view matters. `DESIGN-SYSTEM.md` cites Star Trek sources and fan projects.
 6. Not verified: nothing here has been run in the live app (see report); `herdr-app check` passed only on a temp-home copy; the ship view's no-art path and the
    BRIDGE wordmark were not looked at on screen. Layout json was validated structurally but not loaded with `layout.switch`.
-7. Public repo needs topics `herdr-layout` and `herdr-theme`; the repo owner in the README install line (`juanantoniofm`) is assumed.
+7. Public repo needs topics `herdr-layout` and `herdr-theme`. Owner is `wakaru44` (remote `git@github.com-wakaru44:wakaru44/herdr-layout-lcars.git`); SSH auth for that alias is currently rejected by GitHub: the key behind the alias must be added to the wakaru44 GitHub account, and the empty repo created, before the first push.
 8. `lcars-bar` hardcodes `~/.config/herdr-app/settings.json` and a PATH of `$HOME/.local/bin:/usr/local/bin`; fine on macOS/Linux, not Windows.

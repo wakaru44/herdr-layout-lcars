@@ -30,7 +30,7 @@ franchise. "LCARS" is only a style reference for the look; no Star Trek artwork,
 
 Tell your Herdr agent:
 
-> add herdr.dev/layouts/juanantoniofm/lcars-bridge
+> add herdr.dev/layouts/wakaru44/lcars-bridge
 
 or by hand, from a clone of this repo into `~/.config/herdr-app`:
 

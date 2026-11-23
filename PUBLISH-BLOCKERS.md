@@ -1,6 +1,6 @@
 # PUBLISH BLOCKERS (the foreman removes this file before publishing)
 
-1. **TODO attribution pending: bar, board, pane, files mods derive from an installed community layout called kanhrd whose author/licence we are still confirming.**
+1. **RESOLVED for bar, board, pane:** they derive from kanhrd, the repo owner's own project (THIRD-PARTY.md now says so). **STILL OPEN: `lcars-files`** is a restyled copy of Herdr's shipped `files` mod (0.1.16); the Herdr desktop app's licence is not confirmed (the herdrdev/herdr repo is the classic TUI, Apache-2.0, not necessarily the app). Either ask the Herdr author, or replace `lcars-files` with Herdr's own `files` mod (layout `side-body` child) / rewrite it from our RECIPE.
    `lcars-bar`, `lcars-board`, `lcars-pane` started as clones of `kanhrd-bar`, `kanhrd-board`, `kanhrd-pane` (0.1.12) and keep their structure and
    contracts (stack `view`, column `side`, `side-body`). `lcars-files` started as a copy of Herdr's shipped `files` mod (0.1.16); confirm that
    Herdr's licence allows redistributing a derived copy. Until the kanhrd author and licence are known, either get permission / a licence, or
@@ -9,7 +9,7 @@
    Produce a sanitized one: in a throwaway Herdr home (`HERDR_APP_HOME=$(mktemp -d)` with this repo copied in) or a clean window, create 3-4 spaces with
    generic names (alpha, beta, ...), a few agents or shells showing neutral text, switch to the ship view, and capture the window (about 1600x1000).
    Check every pixel for names, paths, emails before committing.
-3. **Licence question above** also covers the SVG glyphs in `mods/*/` (chevron, close, gear, split, zoom, pencil, arrow, win-*, file, folder, filter, sort-*,
+3. **DONE:** Lucide ISC notice added to THIRD-PARTY.md. Harness logos: kept (owner decision: public icons, nominative use; the notice says trademarks are not granted). Original item: it also covered the SVG glyphs in `mods/*/` (chevron, close, gear, split, zoom, pencil, arrow, win-*, file, folder, filter, sort-*,
    more-horizontal): they likely come from Lucide (ISC) via Herdr's shipped mods; if kept, add the Lucide ISC notice to `THIRD-PARTY.md`.
    `mods/lcars-frame/icons/{codex,antigravity,kiro}.svg` are harness logos (trademarks of OpenAI/Google/AWS) derived from Herdr's icons; decide whether to keep.
 4. The crew glyphs and zone names were genericised (`crew-lead/person/diamond/other`, zones medbay/reactor/hangar/shields) so saved ship assignments from the

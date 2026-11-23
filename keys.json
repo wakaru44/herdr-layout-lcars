@@ -1,0 +1,15 @@
+{
+  "global": {
+    "cmd-o": "mod.open:lcars-goto"
+  },
+  "layout:lcars-bridge": {
+    "cmd-shift-s": "lcars-bar.view:ship",
+    "cmd-shift-b": "lcars-bar.view:board",
+    "cmd-shift-t": "lcars-bar.view:terminals",
+    "cmd-shift-f": "lcars-bar.panel:files",
+    "cmd-shift-g": "lcars-bar.panel:changes",
+    "cmd-shift-m": "lcars-bar.appearance",
+    "cmd-shift-j": "lcars-bar.term",
+    "ctrl-`": "lcars-bar.term"
+  }
+}

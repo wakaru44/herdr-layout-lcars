@@ -1,0 +1,346 @@
+{
+  "id": "root",
+  "preview": "layouts/lcars-bridge.svg",
+  "type": "column",
+  "titlebar": "none",
+  "traffic_lights": [
+    226,
+    34
+  ],
+  "theme": {
+    "light": "lcars-bridge-light",
+    "dark": "lcars-bridge-dark"
+  },
+  "ui_font": "Antonio",
+  "font": "JetBrains Mono",
+  "background": "background",
+  "children": [
+    {
+      "id": "top",
+      "type": "block",
+      "size": {
+        "px": 64
+      },
+      "window_drag": true,
+      "content": {
+        "mod": "lcars-frame",
+        "props": {
+          "part": "top"
+        }
+      }
+    },
+    {
+      "id": "body",
+      "type": "row",
+      "children": [
+        {
+          "id": "sidebar",
+          "type": "block",
+          "size": {
+            "px": 210
+          },
+          "min": 210,
+          "max": 210,
+          "content": {
+            "mod": "lcars-frame",
+            "props": {
+              "part": "side"
+            }
+          }
+        },
+        {
+          "id": "work",
+          "type": "column",
+          "padding": [
+            8,
+            12
+          ],
+          "gap": 8,
+          "resizable": false,
+          "children": [
+            {
+              "id": "bar",
+              "type": "block",
+              "size": {
+                "px": 30
+              },
+              "window_drag": true,
+              "content": {
+                "mod": "lcars-bar"
+              }
+            },
+            {
+              "id": "view",
+              "type": "stack",
+              "active": "terminals",
+              "children": [
+                {
+                  "id": "ship",
+                  "type": "column",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "id": "ship-top",
+                      "type": "row",
+                      "gap": 8,
+                      "size": {
+                        "weight": 11
+                      },
+                      "min": 160,
+                      "children": [
+                        {
+                          "id": "ship-surface",
+                          "type": "block",
+                          "size": {
+                            "weight": 1
+                          },
+                          "content": {
+                            "mod": "lcars-ship"
+                          }
+                        },
+                        {
+                          "id": "ship-wavebox",
+                          "type": "column",
+                          "children": [
+                            {
+                              "id": "ship-wavehead",
+                              "type": "block",
+                              "size": {
+                                "px": 24
+                              },
+                              "content": {
+                                "mod": "lcars-termhead",
+                                "props": {
+                                  "target": "ship-wave",
+                                  "label": "STATUS TRACE",
+                                  "box": "ship-wavebox",
+                                  "restore": {
+                                    "px": 230
+                                  },
+                                  "collapsed": 76
+                                }
+                              }
+                            },
+                            {
+                              "id": "ship-wave",
+                              "type": "block",
+                              "size": {
+                                "weight": 1
+                              },
+                              "content": {
+                                "mod": "lcars-wave"
+                              }
+                            }
+                          ],
+                          "size": {
+                            "px": 230
+                          },
+                          "min": 180
+                        }
+                      ]
+                    },
+                    {
+                      "id": "ship-termbox",
+                      "type": "column",
+                      "size": {
+                        "weight": 9
+                      },
+                      "children": [
+                        {
+                          "id": "ship-termhead",
+                          "type": "block",
+                          "size": {
+                            "px": 24
+                          },
+                          "content": {
+                            "mod": "lcars-termhead",
+                            "props": {
+                              "target": "ship-term",
+                              "label": "TERMINAL",
+                              "box": "ship-termbox",
+                              "restore": {
+                                "weight": 9
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "id": "ship-term",
+                          "type": "block",
+                          "size": {
+                            "weight": 1
+                          },
+                          "background": "background",
+                          "radius": 10,
+                          "border": {
+                            "width": 2,
+                            "color": "border"
+                          },
+                          "focus": {
+                            "border": {
+                              "width": 2,
+                              "color": "accent"
+                            }
+                          },
+                          "content": {
+                            "agent": "focused"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "board",
+                  "type": "column",
+                  "gap": 8,
+                  "children": [
+                    {
+                      "id": "board-cards",
+                      "type": "block",
+                      "size": {
+                        "weight": 11
+                      },
+                      "min": 160,
+                      "content": {
+                        "mod": "lcars-board"
+                      }
+                    },
+                    {
+                      "id": "board-termbox",
+                      "type": "column",
+                      "size": {
+                        "weight": 9
+                      },
+                      "children": [
+                        {
+                          "id": "board-termhead",
+                          "type": "block",
+                          "size": {
+                            "px": 24
+                          },
+                          "content": {
+                            "mod": "lcars-termhead",
+                            "props": {
+                              "target": "board-term",
+                              "label": "TERMINAL",
+                              "box": "board-termbox",
+                              "restore": {
+                                "weight": 9
+                              }
+                            }
+                          }
+                        },
+                        {
+                          "id": "board-term",
+                          "type": "block",
+                          "size": {
+                            "weight": 1
+                          },
+                          "background": "background",
+                          "radius": 10,
+                          "border": {
+                            "width": 2,
+                            "color": "border"
+                          },
+                          "focus": {
+                            "border": {
+                              "width": 2,
+                              "color": "accent"
+                            }
+                          },
+                          "content": {
+                            "agent": "focused"
+                          }
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "id": "terminals",
+                  "type": "block",
+                  "content": {
+                    "tab": "active",
+                    "pane": {
+                      "gap": 8,
+                      "radius": 10,
+                      "background": "background",
+                      "lone": true,
+                      "border": {
+                        "width": 2,
+                        "color": "border"
+                      },
+                      "focus": {
+                        "width": 2,
+                        "color": "accent"
+                      },
+                      "header": {
+                        "content": {
+                          "mod": "lcars-pane"
+                        },
+                        "height": 30,
+                        "position": "top",
+                        "reveal": "always"
+                      }
+                    }
+                  }
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "id": "side",
+          "type": "column",
+          "hidden": true,
+          "size": {
+            "px": 280
+          },
+          "min": 240,
+          "max": 900,
+          "padding": [
+            8,
+            12
+          ],
+          "children": [
+            {
+              "id": "side-body",
+              "type": "stack",
+              "active": "files",
+              "children": [
+                {
+                  "id": "files",
+                  "type": "block",
+                  "content": {
+                    "mod": "lcars-files"
+                  }
+                },
+                {
+                  "id": "changes",
+                  "type": "block",
+                  "content": {
+                    "mod": "changes"
+                  }
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "bottom",
+      "type": "block",
+      "size": {
+        "px": 44
+      },
+      "content": {
+        "mod": "lcars-frame",
+        "props": {
+          "part": "bottom"
+        }
+      }
+    }
+  ]
+}

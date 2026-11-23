@@ -1,0 +1,163 @@
+.gitignore
+  s_edfdc98f4c285f::t_52f18e4d8921a2 1-4
+CHANGELOG.md
+  s_edfdc98f4c285f::t_c5a5fa36140687 1-7
+DESIGN-SYSTEM.md
+  s_edfdc98f4c285f::t_d91c2c565ecb06 1-216
+LICENSE
+  s_edfdc98f4c285f::t_5c5e3104310505 1-21
+PUBLISH-BLOCKERS.md
+  s_edfdc98f4c285f::t_8967ccfe3d55b9 1-22
+README.md
+  s_edfdc98f4c285f::t_7695ea9bb64fc5 1-90
+RECIPE.md
+  s_edfdc98f4c285f::t_5c0594e6ce800a 1-143
+THIRD-PARTY.md
+  s_edfdc98f4c285f::t_b92ecc6d716905 1-58
+fonts/LICENSE-antonio-OFL.txt
+  s_edfdc98f4c285f::t_d6c504b0133e10 1-93
+keys.json
+  s_edfdc98f4c285f::t_828203e4d86af8 1-15
+layouts/lcars-bridge.json
+  s_edfdc98f4c285f::t_1275f1d8fca72f 1-346
+layouts/lcars-bridge.svg
+  s_edfdc98f4c285f::t_2642952ee50fbc 1-7
+mods/lcars-bar/changes.svg
+  s_edfdc98f4c285f::t_4b74aad23729b4 1
+mods/lcars-bar/close.svg
+  s_edfdc98f4c285f::t_798807699d9b0f 1
+mods/lcars-bar/files.svg
+  s_edfdc98f4c285f::t_7bcb5b1db44d03 1-4
+mods/lcars-bar/main.js
+  s_edfdc98f4c285f::t_763150b1e66dc3 1-256
+mods/lcars-bar/mod.json
+  s_edfdc98f4c285f::t_49c900d49e2117 1-4
+mods/lcars-bar/win-close.svg
+  s_edfdc98f4c285f::t_8d77d9cd87bcca 1
+mods/lcars-bar/win-max.svg
+  s_edfdc98f4c285f::t_9bdfff3f934776 1
+mods/lcars-bar/win-min.svg
+  s_edfdc98f4c285f::t_843048ed981fef 1
+mods/lcars-bar/win-restore.svg
+  s_edfdc98f4c285f::t_5ac14b6a60284d 1
+mods/lcars-board/main.js
+  s_edfdc98f4c285f::t_2e024238ab3776 1-324
+mods/lcars-board/mod.json
+  s_edfdc98f4c285f::t_0d786f076a1d54 1-4
+mods/lcars-board/more-horizontal.svg
+  s_edfdc98f4c285f::t_218ab64857e5fa 1
+mods/lcars-board/pencil.svg
+  s_edfdc98f4c285f::t_0a3ca16e74e3bd 1
+mods/lcars-files/chevron-down.svg
+  s_edfdc98f4c285f::t_ffed0e37881a10 1-14
+mods/lcars-files/chevron-right.svg
+  s_edfdc98f4c285f::t_56e8c7993e4814 1-14
+mods/lcars-files/file.svg
+  s_edfdc98f4c285f::t_1842577d661861 1-4
+mods/lcars-files/folder.svg
+  s_edfdc98f4c285f::t_9fd4f8d8eac316 1-14
+mods/lcars-files/main.js
+  s_edfdc98f4c285f::t_ee7a71ba47dfa5 1-207
+mods/lcars-files/mod.json
+  s_edfdc98f4c285f::t_49fd6b27b1b57f 1-3
+mods/lcars-frame/gear.svg
+  s_edfdc98f4c285f::t_51e8225a2f005b 1-15
+mods/lcars-frame/icons/antigravity.svg
+  s_edfdc98f4c285f::t_423c6db4f7b09a 1
+mods/lcars-frame/icons/codex.svg
+  s_edfdc98f4c285f::t_e4d2d266a19964 1
+mods/lcars-frame/icons/filter.svg
+  s_edfdc98f4c285f::t_d8a136a3ade0b2 1
+mods/lcars-frame/icons/kiro.svg
+  s_edfdc98f4c285f::t_d8cbd9b1059579 1
+mods/lcars-frame/icons/sort-alpha-up.svg
+  s_edfdc98f4c285f::t_f1fe84414acd42 1
+mods/lcars-frame/icons/sort-alpha.svg
+  s_edfdc98f4c285f::t_2fa01f4944840f 1
+mods/lcars-frame/icons/sort-natural.svg
+  s_edfdc98f4c285f::t_0a94f10135aa29 1
+mods/lcars-frame/icons/sort-project-up.svg
+  s_edfdc98f4c285f::t_920e9949308032 1
+mods/lcars-frame/icons/sort-project.svg
+  s_edfdc98f4c285f::t_987d4be0150a48 1
+mods/lcars-frame/main.js
+  s_edfdc98f4c285f::t_4b988b429085cf 1-326
+mods/lcars-frame/mod.json
+  s_edfdc98f4c285f::t_38f297b8893cb8 1-3
+mods/lcars-goto/main.js
+  s_edfdc98f4c285f::t_c8c4a029737c0c 1-118
+mods/lcars-goto/mod.json
+  s_edfdc98f4c285f::t_81b5a06c235de7 1-11
+mods/lcars-goto/rank.js
+  s_edfdc98f4c285f::t_9f85d9cdf0e55b 1-23
+mods/lcars-goto/rank.test.mjs
+  s_edfdc98f4c285f::t_cbdb8547b76232 1-22
+mods/lcars-pane/arrow-left.svg
+  s_edfdc98f4c285f::t_468a9005b4f2ec 1
+mods/lcars-pane/close.svg
+  s_edfdc98f4c285f::t_0b37bad969a586 1
+mods/lcars-pane/main.js
+  s_edfdc98f4c285f::t_fa02161161c9be 1-117
+mods/lcars-pane/mod.json
+  s_edfdc98f4c285f::t_835099bb7635a5 1-4
+mods/lcars-pane/split-down.svg
+  s_edfdc98f4c285f::t_cb09353d9d2777 1
+mods/lcars-pane/split-right.svg
+  s_edfdc98f4c285f::t_038b9a7996265b 1
+mods/lcars-pane/unzoom.svg
+  s_edfdc98f4c285f::t_7869bab56774fc 1
+mods/lcars-pane/zoom.svg
+  s_edfdc98f4c285f::t_1f6b62a016d83b 1
+mods/lcars-ship/art/README.md
+  s_edfdc98f4c285f::t_d34f6831356eb3 1-21
+mods/lcars-ship/icons/crew-diamond.svg
+  s_edfdc98f4c285f::t_88bc25293bf1c2 1
+mods/lcars-ship/icons/crew-lead.svg
+  s_edfdc98f4c285f::t_7ce05f441c2c8b 1
+mods/lcars-ship/icons/crew-other.svg
+  s_edfdc98f4c285f::t_48f506b11627cc 1
+mods/lcars-ship/icons/crew-person.svg
+  s_edfdc98f4c285f::t_0c5eb9a8c9e06b 1
+mods/lcars-ship/main.js
+  s_edfdc98f4c285f::t_d1d25c776071ac 1-268
+mods/lcars-ship/mod.json
+  s_edfdc98f4c285f::t_d7aee39af36f3f 1-4
+mods/lcars-term/main.js
+  s_edfdc98f4c285f::t_1b764e9180e6cc 1-26
+mods/lcars-term/mod.json
+  s_edfdc98f4c285f::t_7a0d1024a7a29b 1-4
+mods/lcars-termhead/main.js
+  s_edfdc98f4c285f::t_96d07d1214c56c 1-29
+mods/lcars-termhead/mod.json
+  s_edfdc98f4c285f::t_f8ed8b46ccea80 1-4
+mods/lcars-wave/main.js
+  s_edfdc98f4c285f::t_44be7c767c986f 1-74
+mods/lcars-wave/mod.json
+  s_edfdc98f4c285f::t_a34db120a0606a 1-4
+mods/lcars-wave/wave.js
+  s_edfdc98f4c285f::t_9ba85711af2c74 1-36
+mods/lcars-wave/wave.test.mjs
+  s_edfdc98f4c285f::t_4b31917d4a5ffc 1-21
+themes/lcars-bridge-dark.json
+  s_edfdc98f4c285f::t_7150a0b6df3217 1-51
+themes/lcars-bridge-light.json
+  s_edfdc98f4c285f::t_3af079e3f67910 1-52
+tools/check-contrast.py
+  s_edfdc98f4c285f::t_206a12eeb147c9 1-91
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "cd03676c4c646e16c6dcf5da17d45831fd817725",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Juan Antonio F.M. <juanantoniofm.11@gmail.com>"
+    }
+  }
+}

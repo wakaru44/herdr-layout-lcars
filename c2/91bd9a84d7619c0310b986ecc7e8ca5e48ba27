@@ -1,0 +1,21 @@
+PUBLISH-BLOCKERS.md
+  s_edfdc98f4c285f::t_2a7bb540fa4c50 3,12
+THIRD-PARTY.md
+  s_edfdc98f4c285f::t_a9dca4a5a89e15 42-95
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "c291bd9a84d7619c0310b986ecc7e8ca5e48ba27",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Juan Antonio F.M. <juanantoniofm.11@gmail.com>"
+    }
+  }
+}

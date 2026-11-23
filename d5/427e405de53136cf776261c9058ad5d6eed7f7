@@ -1,0 +1,23 @@
+LICENSE
+  s_edfdc98f4c285f::t_22ad73d3af85be 3
+PUBLISH-BLOCKERS.md
+  s_edfdc98f4c285f::t_748180516399a0 3,17
+README.md
+  s_edfdc98f4c285f::t_87557ddef2f502 33
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "d5427e405de53136cf776261c9058ad5d6eed7f7",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Wakaru Himura <wakaru44@gmail.com>"
+    }
+  }
+}

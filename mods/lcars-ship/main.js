@@ -21,7 +21,7 @@ const RANK = ["blocked", "working", "done", "idle"];
 // dock drawn from rects, so the mod needs no image files. ARTS is empty as shipped; add an entry per picture:
 //   name: { label, file: "art/name.png", light: "art/name-light.png", w, h, zones: { <zoneId>: [x, y, w, h] }, pills?: { <zoneId>: [x, y, w, h] } }
 // zones = the parts of the picture as [x, y, w, h] in its own pixels (drop targets + a faint highlight). pills = optional callout boxes,
-// one per zone, that show the zone's label + spaces and expand on hover. The art row in the header only shows when ARTS has entries.
+// one per zone (optional per zone: a missing one is placed automatically next to its part), that show the zone's label + spaces and expand on hover. The art row in the header only shows when ARTS has entries.
 // Choice kept in shared "lcars.ship.art".
 const ART_DIR = "mods/lcars-ship";
 const ARTS = {};
@@ -30,6 +30,28 @@ const PLAIN = { w: 1376, h: 768, order: ["bridge", "science", "medbay", "enginee
 const bay = (i) => [40 + (i % 4) * 335, i < 4 ? 110 : 488, 290, 170];
 const STARS = (() => { let x = 7; const r = () => (x = (x * 1103515245 + 12345) % 2147483648) / 2147483648; return Array.from({ length: 48 }, () => [Math.round(r() * 1370), Math.round(r() * 762), r() < 0.2 ? 3 : 2, r() < 0.5 ? "55" : "33"]); })();
 const ART_KEYS = ["plain", ...Object.keys(ARTS)];
+// Pills are optional per zone: a zone with no `pills` rect gets one placed from its hull part rect (same size as the other pills,
+// ~150x34 if none; centred on the part, above it if it fits in the picture box else below, clamped, nudged off other pills).
+function placePills(art, bw, bh) {
+  const out = { ...art.pills }, have = Object.values(out);
+  const pw = have.length ? Math.round(have.reduce((a, r) => a + r[2], 0) / have.length) : 150;
+  const ph = have.length ? Math.round(have.reduce((a, r) => a + r[3], 0) / have.length) : 34;
+  const hit = ([x, y, w, h]) => Object.values(out).some(([a, b, c, d]) => x < a + c && a < x + w && y < b + d && b < y + h);
+  for (const [id] of ZONES_ALL) {
+    const z = art.zones?.[id];
+    if (out[id] || !z) continue;
+    const cx = Math.round(z[0] + z[2] / 2 - pw / 2), gap = 6;
+    const ys = [z[1] - ph - gap, z[1] + z[3] + gap].map((y) => Math.max(0, Math.min(bh - ph, y)));
+    if (z[1] - ph - gap < 0) ys.reverse();
+    let pick = null;
+    for (const y of ys) for (let i = 0; i < 12 && !pick; i++) {
+      const x = Math.max(0, Math.min(bw - pw, cx + (i % 2 ? 1 : -1) * Math.ceil(i / 2) * (pw + gap)));
+      if (!hit([x, y, pw, ph])) pick = [x, y, pw, ph];
+    }
+    out[id] = pick ?? [Math.max(0, Math.min(bw - pw, cx)), ys[0], pw, ph];
+  }
+  return out;
+}
 const WORD = { working: "WORKING", blocked: "NEEDS YOU", done: "DONE", idle: "STANDING BY" };
 const FOREMAN = /^\W*foreman/i; // the tab name starts with foreman (people write a star before it)
 const CREW_RANK = { blocked: 0, working: 1, done: 2, idle: 3 };
@@ -135,6 +157,7 @@ export default class Ship extends View {
     // the tray column takes its width off. Only until the first size event: a rough guess from the window.
     const st = this.root ? { width: this.root.width - 32 - lost, height: this.root.height - 70 } : { width: vp.width - 300 - lost, height: vp.height * 0.33 };
     const art = ARTS[artKey];
+    const pr = art?.pills ? placePills(art, art.w, art.h) : null;
     const bw0 = art?.w ?? PLAIN.w, bh0 = art?.h ?? PLAIN.h;
     const k = Math.max(0.1, Math.min((st.width - 4) / bw0, (st.height - 4) / bh0));
     const iw = Math.floor(bw0 * k), ih = Math.floor(bh0 * k);
@@ -148,6 +171,7 @@ export default class Ship extends View {
     // a part of the ship: faint outline, brighter when hovered or a drop target; no chips when the pills carry them
     const part = (id) => {
       const stat = statOf(id), on = this.hl === id || (dragMoved && this.over === id);
+      if (!art.zones?.[id]) return null;
       return hit(at(div().id(`zone-${id}`), art.zones[id]).rounded(6).border(on ? 2 : 1)
         .border_color(dragMoved && this.over === id ? "#ffffff" : on ? P.tan : armed ? P.tan + "55" : "#00000000")
         .bg(on ? (stat ? P.status[stat] + "55" : P.orange + "33") : "#00000000")
@@ -158,10 +182,11 @@ export default class Ship extends View {
     };
     // a callout pill of the picture: zone name + its spaces, compact
     const pill = (id) => {
-      const [, , w, h] = art.pills[id], stat = statOf(id), mine = spaceList.filter((s) => assign[s.id] === id);
+      if (!pr[id]) return null;
+      const [, , w, h] = pr[id], stat = statOf(id), mine = spaceList.filter((s) => assign[s.id] === id);
       const wide = px(w) >= 90, on = this.hl === id || (dragMoved && this.over === id);
       const names = mine.length ? mine.slice(0, 2).map((s) => String(s.name).toUpperCase()).join(" · ") + (mine.length > 2 ? ` +${mine.length - 2}` : "") : "";
-      return hit(at(h_flex().id(`pill-${id}`), art.pills[id]).rounded(px(h) / 2).border(on || stat || art.drawn ? 2 : 0)
+      return hit(at(h_flex().id(`pill-${id}`), pr[id]).rounded(px(h) / 2).border(on || stat || art.drawn ? 2 : 0)
         .border_color(dragMoved && this.over === id ? "#ffffff" : stat ? P.status[stat] : P.tan)
         .bg(art.drawn ? (stat ? P.status[stat] : P.lilac) : stat ? P.status[stat] + "66" : on ? "#ffffff22" : "#00000000")
         .on_mouse_move(enter(id, true)).on_hover(leave(id)), id)
@@ -172,7 +197,8 @@ export default class Ship extends View {
     };
     // the hover card: grows out of its pill, floats above everything, one row per space with bigger crew icons
     const card = (id) => {
-      const [x, y, w, h] = art.pills[id], mine = spaceList.filter((s) => assign[s.id] === id), cw = 340;
+      if (!pr[id]) return null;
+      const [x, y, w, h] = pr[id], mine = spaceList.filter((s) => assign[s.id] === id), cw = 340;
       const right = x + w / 2 > bw0 / 2, low = y > bh0 / 2;
       let el = v_flex().id(`card-${id}`).absolute().w(cw).gap(6).p(8).rounded(12).border(2).border_color(P.orange).bg(P.ground)
         .on_hover((hv, cx) => { if (!hv && this.hov === id && this.drag == null) { this.hov = null; this.hl = null; this.over = null; cx.notify(); } })
@@ -197,9 +223,9 @@ export default class Ship extends View {
     let ship;
     if (art) {
       const kids = [image(`${ART_DIR}/${light ? art.light : art.file}`).absolute().left(0).top(0).w(iw).h(ih),
-        ...ZONES_ALL.map(([id]) => part(id))];
-      if (art.pills) kids.push(...ZONES_ALL.map(([id]) => pill(id)));
-      if (art.pills && (this.hov ?? this.pin)) kids.push(card(this.hov ?? this.pin));
+        ...ZONES_ALL.map(([id]) => part(id)).filter(Boolean)];
+      if (pr) kids.push(...ZONES_ALL.map(([id]) => pill(id)).filter(Boolean));
+      if (pr && (this.hov ?? this.pin) && pr[this.hov ?? this.pin]) kids.push(card(this.hov ?? this.pin));
       ship = frame(kids);
     } else {
       // PLAIN: starfield, a dock spine with 8 bays; the bays are the zones (hit areas + chips)

@@ -42,18 +42,23 @@ Star Trek LCARS Master Systems Display exterior side elevation profile of an ori
 - "No readable text" matters: image models love to invent gibberish labels, and the mod writes the real labels on top.
 - Results vary run to run. Look at 3-4 generations and pick one whose pills sit in a clean left/right/bottom arrangement.
 
-## Generic variant (no Star Trek or Federation)
+## Recommended / generic variant (no Star Trek or Federation)
 
-For people who prefer to stay clear of the IP. Same structure, no franchise names:
+For people who prefer to stay clear of the IP, and the one to try first for a new picture. It asks for exactly eight pills, four on each
+side, each leader line ending on a different part:
 
 ```text
 Technical diagram of an original generic starship in a flat LCARS-style retro computer interface style. Side cross-section cutaway view
 showing internal decks, a saucer-like primary hull, a connecting neck, an engineering hull, and two engine nacelles on pylons. Solid pure
 black background (#000000), flat 2D vector technical line art, no gradients or 3D shading. Palette strictly pastel orange, peach, lilac,
 pale lavender, light sky blue and amber outlines. Clean technical internal schematics showing deck lines, engines, a reactor core tube
-and nacelle coils. Around the ship, 8 thin leader lines extend outward to blank rounded rectangular pill-shaped callout boxes (empty
-label slabs with rounded ends), arranged cleanly on the left, right and bottom. Completely blank labels, strictly no readable text, no
-letters, no numbers, no gibberish text. Minimalist retro sci-fi computer interface schematic. 16:9.
+and nacelle coils. Around the ship, exactly eight thin leader lines extend outward to exactly eight blank rounded rectangular pill-shaped
+callout boxes (empty label slabs with rounded ends): four on the left and four on the right, evenly spread, no two lines ending on the
+same part. The eight parts, one line each: saucer top, saucer front, saucer underside, engineering hull, reactor / warp core, nacelle
+coils / neck, lower aft hull, nose. Completely blank labels, strictly no readable text, no letters, no numbers, no gibberish text.
+Minimalist retro sci-fi computer interface schematic. 16:9.
 ```
 
-This variant is untested against the original; expect to adjust it.
+The model does not always honour counts. Count the pills you got; the mod auto-places a pill for any zone you leave out of `pills`
+(see [AGENT-SETUP.md](AGENT-SETUP.md)). The historical prompts above are kept word for word. This variant has not been run against the original;
+expect to adjust it.

@@ -41,8 +41,8 @@ const ARTS = {
     light: "art/<name>-light.png",       // used when settings().dark === false
     w: 1376, h: 768,                     // the picture's own pixel size
     drawn: false,                        // true if the picture has NO pills: the mod draws filled pills itself
-    zones: { bridge: [x, y, w, h], ... },  // all 8 ids, the hull PART each leader line points at (drop target + faint highlight)
-    pills: { bridge: [x, y, w, h], ... },  // all 8 ids, the callout pill the leader line starts at (label + spaces; hover opens a card)
+    zones: { bridge: [x, y, w, h], ... },  // the hull PART each leader line points at (drop target + faint highlight)
+    pills: { bridge: [x, y, w, h], ... },  // optional per zone (auto-placed if missing): the callout pill the leader line starts at (label + spaces; hover opens a card)
   },
 };
 ```
@@ -51,10 +51,12 @@ Facts about the code (read it before you trust this):
 
 - The image box is the largest `w:h` rectangle that fits the stage, centred. **Every rect is `[x, y, w, h]` in the picture's own pixels**
   (not fractions); the mod scales them by the displayed size / `w`. So measure on the original PNG.
-- Zone ids are exactly: `bridge`, `science`, `medbay`, `engineering`, `reactor`, `cargo`, `hangar`, `shields`. All 8 must be present in
-  `zones`, and in `pills` too if `pills` is given (a missing id throws). If the picture has only 7 pills, put the eighth where a
-  pill would fit, or point two ids at nearby spots and accept one overlapping pill; if it has no pills at all, omit `pills` and the chips sit
-  inside the part rects instead.
+- Zone ids are exactly: `bridge`, `science`, `medbay`, `engineering`, `reactor`, `cargo`, `hangar`, `shields`. Give a `zones` rect for every id
+  you want usable. **`pills` is optional per zone**: a zone without a `pills` rect gets one placed automatically from its `zones` rect, the same
+  size as the other pills (about 150x34 picture px if there are none), centred on the part, above it if it fits inside the picture and else
+  below, clamped inside the box and nudged sideways off other pills. It behaves like any pill (name + spaces, hover card, click, drop target).
+  Image models do not always honour counts: **count the pills you actually got** and fill `pills` only for those; let the rest auto-place.
+  If the picture has no pills at all, omit `pills` and the chips sit inside the part rects instead.
 - A `part` (zones entry) is the area the user drops a chip on and the highlight shown on hover; a `pill` is a small box over the picture's
   empty pill: label `NAME` plus the names of up to two spaces, and a card on hover (pinned on click).
 - Pills over about 90 px wide show a label and names; narrower ones show a count only.

@@ -1,0 +1,19 @@
+THIRD-PARTY.md
+  s_edfdc98f4c285f::t_8fdf1562762840 100
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "18d8ad72696b5f5c10c3251941cca5bafa8e1654",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Wakaru Himura <wakaru44@gmail.com>"
+    }
+  }
+}

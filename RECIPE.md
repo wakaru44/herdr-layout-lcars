@@ -127,6 +127,7 @@ Keys: `keys.json` (`layout:lcars-bridge` section and `global` `cmd-o`: `mod.open
 - Herdr has no command to focus an overlay's terminal: click inside the quick terminal to type.
 - The quick terminal window does not survive a reload or restart; it starts closed.
 - Wave history lives only while the panel is mounted; it is lost on reload.
+- Ship art is optional and user-supplied: the repo ships no pictures; the default is the drawn dock (`docs/ship-art/AGENT-SETUP.md`).
 - The ship view's section names are labels only; saved assignments are keyed by zone id.
 - Sizes: crew shows 14 rows at 820px height before clipping; tab pills show 6 at a time (4 with the side panel open).
 - Pulses stop after 5 s; the pulse opacity floor is 0.4 (documented gap in `DESIGN-SYSTEM.md`).

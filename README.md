@@ -68,9 +68,14 @@ Nothing uses the network. See `RECIPE.md`, "Watch out", for the full list. In sh
 - `lcars-files` runs `sh`, `git` (status), `powershell` on Windows, and `open` / `code` from its right-click menu; it reads files of the project you browse.
 - `lcars-goto` and `lcars-ship` only read Herdr state.
 
-## Custom ship art
+## Ship art (optional)
 
-None is bundled. See `mods/lcars-ship/art/README.md`.
+The ship view draws a plain space dock by default; no pictures are bundled. To get a generated picture behind your spaces, tell your agent:
+
+> set up the ship art for lcars-bridge following docs/ship-art/AGENT-SETUP.md
+
+It generates candidates from [`docs/ship-art/PROMPTS.md`](docs/ship-art/PROMPTS.md), makes the light variant with `tools/make-light-art.py` and
+registers it. By hand: `mods/lcars-ship/art/README.md`.
 
 ## Design
 

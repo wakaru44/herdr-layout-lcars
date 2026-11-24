@@ -97,7 +97,7 @@ repository, and are released here under the MIT licence of this repository.
 ## Herdr shipped mods
 
 `mods/lcars-files/` started as a copy of the `files` mod that ships with Herdr (restyled, plus a right-click menu). Its licence is
-the Herdr app's; see PUBLISH-BLOCKERS.md.
+the Herdr app's. Herdr encourages sharing layouts and mods built from its shipped ones (herdr.dev/layouts, herdr.dev/mods).
 
 ## Research
 

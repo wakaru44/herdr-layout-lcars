@@ -1,0 +1,27 @@
+README.md
+  s_edfdc98f4c285f::t_7bd1529fa4e2e5 71,73-78
+RECIPE.md
+  s_edfdc98f4c285f::t_0a1346998d2e29 130
+docs/ship-art/AGENT-SETUP.md
+  s_edfdc98f4c285f::t_79199be9afd640 1-93
+docs/ship-art/PROMPTS.md
+  s_edfdc98f4c285f::t_9362767f61efba 1-59
+tools/make-light-art.py
+  s_edfdc98f4c285f::t_e48fa51d0c87c8 1-39
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "08315550ae2ec16ea9d2a84e0ba07b7394d44f54",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Wakaru Himura <wakaru44@gmail.com>"
+    }
+  }
+}

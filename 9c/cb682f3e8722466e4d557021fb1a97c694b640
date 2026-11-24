@@ -1,0 +1,23 @@
+docs/ship-art/AGENT-SETUP.md
+  s_edfdc98f4c285f::t_f7961c2b628e64 44-45,54-59
+docs/ship-art/PROMPTS.md
+  s_edfdc98f4c285f::t_30ec2330dbf702 45,47-48,55-59,62-64
+mods/lcars-ship/main.js
+  s_edfdc98f4c285f::t_29d7067b036110 24,33-54,160,174,185-186,189,200-201,226-228
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.7.5",
+  "base_commit_sha": "9ccb682f3e8722466e4d557021fb1a97c694b640",
+  "prompts": {},
+  "sessions": {
+    "s_edfdc98f4c285f": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "1304fe00-6a33-46f4-b009-a6344d2171c0",
+        "model": "claude-sonnet-5-5"
+      },
+      "human_author": "Wakaru Himura <wakaru44@gmail.com>"
+    }
+  }
+}

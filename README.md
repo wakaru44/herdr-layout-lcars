@@ -7,6 +7,7 @@ This is an independent fan project. It is not affiliated with, endorsed by or sp
 franchise. "LCARS" is only a style reference for the look; no Star Trek artwork, logos or text is included.
 
 ![LCARS Bridge](preview.png)
+(I didn't use anything looking like any copyrighted materials, like certain saucer-looking ship. but you could make your own...)
 
 ## What you get
 
